@@ -53,11 +53,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom colors
+				// Custom colors with enhanced palette
 				"autism-blue": {
 					DEFAULT: "#007acc",
-					dark: "#002b5c",
-					light: "#e1f5fe"
+					dark: "#00427a", 
+					light: "#e1f5fe",
+					ultra: "#f0f8ff"
 				},
 			},
 			borderRadius: {
@@ -66,6 +67,7 @@ export default {
 				sm: 'calc(var(--radius) - 4px)',
 				'2xl': '1rem',
 				'3xl': '1.5rem',
+				'4xl': '2rem',
 			},
 			keyframes: {
 				'accordion-down': {
@@ -93,23 +95,53 @@ export default {
 						opacity: '1',
 						transform: 'translateY(0)'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-soft': {
+					'0%, 100%': { 
+						opacity: '1'
+					},
+					'50%': { 
+						opacity: '0.7'
+					}
+				},
+				'shimmer': {
+					'0%': {
+						transform: 'translateX(-100%) rotate(45deg)'
+					},
+					'100%': {
+						transform: 'translateX(200%) rotate(45deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'fadeIn': 'fadeIn 0.5s ease-out forwards'
+				'fadeIn': 'fadeIn 0.5s ease-out forwards',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 2s ease-in-out infinite',
+				'shimmer': 'shimmer 8s linear infinite'
 			},
 			fontFamily: {
 				'cairo': ['Cairo', 'sans-serif']
 			},
 			boxShadow: {
 				'3xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-				'inner-lg': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.1)'
+				'inner-lg': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.1)',
+				'soft': '0 2px 10px rgba(0, 122, 204, 0.1)',
+				'glow': '0 0 15px rgba(0, 122, 204, 0.5)'
 			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'gradient-shine': 'linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.3) 25%, rgba(255,255,255,0.3) 50%, transparent 50%, transparent 75%, rgba(255,255,255,0.3) 75%, rgba(255,255,255,0.3) 100%)',
 			},
 		}
 	},
