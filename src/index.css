@@ -76,6 +76,7 @@
 
   html {
     direction: rtl;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -89,7 +90,7 @@
   }
 
   .section-container {
-    @apply bg-white max-w-4xl mx-auto -mt-10 p-6 md:p-8 shadow-md rounded-md border-r-4 border-autism-blue relative z-10;
+    @apply bg-white max-w-4xl mx-auto -mt-10 p-6 md:p-8 shadow-lg rounded-lg border-r-4 border-autism-blue relative z-10;
   }
 
   .nav-link {
@@ -102,5 +103,38 @@
 
   .feature-card {
     @apply bg-white p-5 rounded-lg shadow-md border-r-4 border-autism-blue;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-in-out forwards;
+  }
+  
+  .delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/30 border border-white/20;
   }
 }
