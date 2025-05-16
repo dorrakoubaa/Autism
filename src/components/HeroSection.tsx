@@ -11,7 +11,7 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = ({ title, subtitle, imageUrl }) => {
   return (
     <div 
-      className="hero-section relative min-h-[380px] flex flex-col items-center justify-center"
+      className="hero-section relative min-h-[280px] md:min-h-[380px] flex flex-col items-center justify-center py-12 md:py-16"
       style={imageUrl ? { 
         backgroundImage: `linear-gradient(rgba(0, 43, 92, 0.85), rgba(0, 43, 92, 0.85)), url(${imageUrl})`,
         backgroundSize: 'cover',
@@ -21,7 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, subtitle, imageUrl }) 
     >
       {/* Particles effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 12 }).map((_, i) => (
           <div 
             key={i}
             className="absolute bg-white rounded-full opacity-30"
@@ -44,8 +44,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ title, subtitle, imageUrl }) 
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-shadow-sm">{title}</h2>
-        <p className="text-lg max-w-3xl mx-auto">{subtitle}</p>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-4 text-shadow-sm">{title}</h2>
+        <p className="text-base md:text-lg max-w-3xl mx-auto px-2">{subtitle}</p>
       </motion.div>
     </div>
   );
