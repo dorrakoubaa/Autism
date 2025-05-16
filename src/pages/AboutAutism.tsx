@@ -18,7 +18,7 @@ const AboutAutism: React.FC = () => {
 
             <div className="flex justify-center mb-6">
               <img 
-                src="/placeholder.svg" 
+                src="/src/Image/autisme.jpg" 
                 alt="طفل مصاب بالتوحد" 
                 className="w-64 h-64 rounded-2xl shadow-md object-cover" 
               />
@@ -73,28 +73,28 @@ const AboutAutism: React.FC = () => {
             <div className="grid grid-cols-2 gap-4">
               <div className="overflow-hidden rounded-lg shadow-md">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/src/Image/autisme 4.jpg" 
                   alt="التوحد 1" 
                   className="w-full h-40 object-cover transition-transform duration-300 hover:scale-105" 
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-md">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/src/Image/autisme 1.jpg" 
                   alt="التوحد 2" 
                   className="w-full h-40 object-cover transition-transform duration-300 hover:scale-105" 
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-md">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/src/Image/autisme 2.jpg" 
                   alt="التوحد 3" 
                   className="w-full h-40 object-cover transition-transform duration-300 hover:scale-105" 
                 />
               </div>
               <div className="overflow-hidden rounded-lg shadow-md">
                 <img 
-                  src="/placeholder.svg" 
+                  src="/src/Image/autisme 3.jpg" 
                   alt="التوحد 4" 
                   className="w-full h-40 object-cover transition-transform duration-300 hover:scale-105" 
                 />

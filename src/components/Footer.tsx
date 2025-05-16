@@ -1,10 +1,18 @@
-
 import React from 'react';
-import { Mail, MessageSquare, Heart, Facebook, Twitter, Instagram } from 'lucide-react';
+import { Mail, MessageSquare, Heart, Facebook, Twitter, Instagram, Link, ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6 }
+    }
+  };
+
   return (
     <footer className="relative pt-16 pb-8 overflow-hidden">
       {/* Top Wave */}
@@ -28,20 +36,20 @@ const Footer: React.FC = () => {
               </p>
             </div>
 
-            {/* Second Column */}
-            <div className="text-center">
-              <h3 className="text-xl font-bold mb-4">تواصل معنا</h3>
-              <div className="flex items-center justify-center gap-4 mb-4">
-                <a href="#" className="bg-white text-autism-blue-dark p-2 rounded-full hover:bg-opacity-90 transition-colors">
-                  <Facebook size={20} />
+            {/* Second Column - Centered Contact Button */}
+            <div className="flex flex-col items-center justify-center">
+              <motion.div 
+                variants={itemVariants}
+                className="w-full flex justify-center"
+              >
+                <a 
+                  href="/contact" 
+                  className="btn-primary flex items-center gap-2 hover:scale-105 transition-transform px-6 py-2 bg-white text-autism-blue rounded-lg font-medium"
+                >
+                  <span>تواصل معنا</span>
+                  <ArrowRight size={18} />
                 </a>
-                <a href="#" className="bg-white text-autism-blue-dark p-2 rounded-full hover:bg-opacity-90 transition-colors">
-                  <Twitter size={20} />
-                </a>
-                <a href="#" className="bg-white text-autism-blue-dark p-2 rounded-full hover:bg-opacity-90 transition-colors">
-                  <Instagram size={20} />
-                </a>
-              </div>
+              </motion.div>
             </div>
 
             {/* Third Column */}

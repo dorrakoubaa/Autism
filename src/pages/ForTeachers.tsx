@@ -72,8 +72,14 @@ const ForTeachers: React.FC = () => {
           {/* قسم الفيديو */}
           <div className="mb-10">
             <div className="aspect-video w-full max-w-2xl mx-auto bg-gray-200 rounded-lg overflow-hidden shadow-md flex items-center justify-center">
-              <p className="text-gray-600">فيديو توضيحي عن طرق الدمج</p>
-            </div>
+            <video 
+      controls 
+      style={{ maxWidth: '100%', height: 'auto' }} 
+      aria-label="فيديو توعوي لأولياء الأمور " 
+    >
+      <source src="/src/Image/video.mp4" type="video/mp4" />
+      فيديو توعوي لأولياء الأمور.
+    </video>            </div>
           </div>
 
           {/* قسم الموارد */}

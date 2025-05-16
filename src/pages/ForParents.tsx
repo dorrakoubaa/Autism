@@ -66,11 +66,19 @@ const ForParents: React.FC = () => {
             </div>
           </div>
 
-          {/* قسم الفيديو */}
+          {}
           <div className="mb-10">
             <h2 className="text-xl font-bold mb-4 text-autism-blue text-center">🎥 فيديو توعوي لأولياء الأمور</h2>
             <div className="aspect-video w-full max-w-2xl mx-auto bg-gray-200 rounded-lg overflow-hidden shadow-md flex items-center justify-center">
-              <p className="text-gray-600">فيديو توعوي للأهل</p>
+            <video 
+      controls 
+      style={{ maxWidth: '100%', height: 'auto' }} 
+      aria-label="فيديو توعوي لأولياء الأمور " 
+    >
+      <source src="/src/Image/video.mp4" type="video/mp4" />
+      فيديو توعوي لأولياء الأمور.
+    </video>
+
             </div>
           </div>
 
@@ -113,6 +121,7 @@ const ForParents: React.FC = () => {
               <div className="bg-blue-50 p-4 rounded-lg hover:shadow-md transition-shadow">
                 <p className="font-bold text-lg mb-1">💬 تقويم النطق والكلام</p>
                 <p>الأستاذة ولاء عبيدة – 50536836</p>
+                <p>زينب بن موسى – 24356581</p>
               </div>
               
               <div className="bg-blue-50 p-4 rounded-lg hover:shadow-md transition-shadow">

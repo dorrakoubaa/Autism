@@ -1,7 +1,7 @@
-
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PageHeader from '../components/PageHeader';
 import { toast } from 'sonner';
+import { usePDF } from 'react-to-pdf';
 
 interface Question {
   id: number;
@@ -68,6 +68,12 @@ const Questionnaire: React.FC = () => {
     diagnosis: string;
   } | null>(null);
 
+  // PDF generation setup
+  const { toPDF, targetRef } = usePDF({
+    filename: 'تقرير_استبيان_التوحد.pdf',
+    page: { margin: 20 }
+  });
+
   const handleAnswerChange = (questionId: number, answer: string) => {
     setQuestions(questions.map(q => 
       q.id === questionId ? {...q, answer} : q
@@ -75,7 +81,6 @@ const Questionnaire: React.FC = () => {
   };
 
   const calculateResults = () => {
-    // Check if all questions are answered
     const unansweredQuestions = questions.filter(q => q.answer === null);
     
     if (unansweredQuestions.length > 0) {
@@ -83,11 +88,9 @@ const Questionnaire: React.FC = () => {
       return;
     }
     
-    // Count positive answers (نعم)
     const positiveAnswers = questions.filter(q => q.answer === 'نعم').length;
     const percentage = (positiveAnswers / questions.length) * 100;
     
-    // Set diagnosis based on percentage
     const diagnosis = percentage >= 60
       ? 'نسبة عالية من مؤشرات التوحد. يُنصح بمراجعة مختص.'
       : 'نسبة منخفضة من مؤشرات التوحد.';
@@ -97,7 +100,6 @@ const Questionnaire: React.FC = () => {
       diagnosis
     });
 
-    // Scroll to results
     setTimeout(() => {
       const resultElement = document.getElementById('result');
       if (resultElement) {
@@ -107,8 +109,12 @@ const Questionnaire: React.FC = () => {
   };
 
   const generatePDF = () => {
+    if (!result) {
+      toast.error('الرجاء حساب النتيجة أولاً');
+      return;
+    }
     toast.success('جاري تحميل التقرير...');
-    // In a real implementation, you would generate a PDF here
+    toPDF();
   };
 
   return (
@@ -116,7 +122,7 @@ const Questionnaire: React.FC = () => {
       <PageHeader title="استبيان تقييم التوحد" />
       
       <div className="max-w-3xl mx-auto my-10 px-4">
-        <div className="bg-white p-6 md:p-8 rounded-lg shadow-md">
+        <div ref={targetRef} className="bg-white p-6 md:p-8 rounded-lg shadow-md">
           <form>
             {questions.map((question, index) => (
               <div key={question.id} className="mb-6 pb-6 border-b border-gray-200 last:border-0">

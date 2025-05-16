@@ -37,7 +37,7 @@ const HomePage: React.FC = () => {
       <HeroSection 
         title="رؤية المشروع"
         subtitle="يسعى هذا الموقع إلى تقديم أدوات معرفية وتربوية داعمة لدمج فعّال ومُستدام للأطفال ذوي طيف التوحد داخل المؤسسات التعليمية، وفق أحدث المقاربات والممارسات المعتمدة في مجال التربية الدامجة."
-        imageUrl="/placeholder.svg"
+        imageUrl="/src/Image/ecole.jpg"
       />
 
       <motion.div 
@@ -145,15 +145,6 @@ const HomePage: React.FC = () => {
               <ArrowRight size={18} />
             </Link>
           </motion.div>
-        </motion.div>
-
-        <motion.div 
-          className="text-center mt-12"
-          variants={itemVariants}
-        >
-          <Link to="/contact" className="bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white px-6 py-3 rounded-full inline-block transition-all hover:shadow-lg">
-            تواصل معنا
-          </Link>
         </motion.div>
       </motion.div>
     </div>
